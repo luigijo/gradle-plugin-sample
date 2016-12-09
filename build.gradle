@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+repositories {
+	// Local Maven
+	maven {
+	   url 'http://svcdapp01.cas.int:8081/nexus/content/groups/public'
+	}
+}
+
+dependencies {
+    
+    testCompile 'junit:junit:4.12'
+
+	// Using Groovy version distributed with Gradle
+	compile localGroovy()
+	
+	//Requires Gradle API
+	compile gradleApi()		
+
+}
+
+apply plugin: 'plugin-sample'
